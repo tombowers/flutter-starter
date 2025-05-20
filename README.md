@@ -1,0 +1,1 @@
+Base app for quickstarting projects
