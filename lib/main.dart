@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:template/routing.dart';
+import 'package:template/routing/router.dart';
+import 'package:template/routing/routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const AppEntrypoint());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AppEntrypoint extends StatelessWidget {
+  const AppEntrypoint({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,31 +16,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class StackObserver extends NavigatorObserver {
-  final depth = ValueNotifier<int>(1);
-
-  void _updateDepth(int newValue) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      depth.value = newValue;
-    });
-  }
-
-  @override
-  void didPush(Route route, Route? previousRoute) {
-    _updateDepth(depth.value + 1);
-  }
-
-  @override
-  void didPop(Route route, Route? previousRoute) {
-    _updateDepth((depth.value - 1).clamp(1, 100));
-  }
-}
-
-class MyShell extends StatelessWidget {
+class AppShell extends StatelessWidget {
   final StatefulNavigationShell shell;
   final GoRouterState state;
 
-  const MyShell({super.key, required this.shell, required this.state});
+  const AppShell({super.key, required this.shell, required this.state});
 
   @override
   Widget build(BuildContext context) {
