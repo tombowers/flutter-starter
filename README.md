@@ -13,6 +13,7 @@
     - with validation
 - TODO: config for app settings
     - enable/disable app/nav bar
+- TODO: intl package
 
 ### Quick Start:
 1. Add pages to `/lib/pages`

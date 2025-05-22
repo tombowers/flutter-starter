@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:template/main.dart';
+import 'package:template/routing/app_shell.dart';
 import 'package:template/routing/routes.dart';
 
 final router = GoRouter(
