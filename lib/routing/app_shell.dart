@@ -27,11 +27,20 @@ class AppShell extends StatelessWidget {
       builder: (_, stackDepth, __) {
         return Scaffold(
           appBar: AppBar(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            titleTextStyle: TextStyle(
+              color: Theme.of(context).colorScheme.onPrimary,
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+            ),
             title: Text(currentRoute.title),
             leading:
                 (currentTab.navigatorKey?.currentState?.canPop() ?? false)
                     ? IconButton(
-                      icon: const Icon(Icons.arrow_back),
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
                       onPressed:
                           () =>
                               currentTab.navigatorKey?.currentState?.maybePop(),

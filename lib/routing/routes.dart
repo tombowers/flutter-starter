@@ -14,7 +14,7 @@ final routes = <AppRouteConfig>[
     label: 'Home',
   ),
   AppRouteConfig(
-    path: '/home/details',
+    path: '/home/details/:id',
     title: 'Details',
     builder: (_, __) => const DetailsScreen(),
   ),
